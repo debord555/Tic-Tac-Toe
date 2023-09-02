@@ -69,10 +69,8 @@ Point TicTacToe::getPositionInput() {
             else
                 std::cout << "Invalid number." << std::endl;
         } while (1);
-    } else {
+    } else
         return Point(-1, -1); // Return an invalid position if the game was won/drawn in prev turn. This position will be ignored in executeTurn func.
-        std::cout << "\n" << std::endl; // Just for formatting
-    }
 }
 
 int TicTacToe::runGame() {
@@ -98,13 +96,16 @@ int TicTacToe::runGame() {
         changeTurn();
     } while (board.checkWin() == 'N' && !board.isFull());
     // Running executeTurn for the last time. Since the game has been won or drawn in the last turn, it will not ask for input, and just print the board.
+    std::cout << "\n" << std::endl; // Just for formatting
     executeTurn();
     // Declare Results
     if (board.checkWin() == 'D') {
         std::cout << "\nThe Match is a draw!" << std::endl;
+        system("pause");
         return 0;
     } else {
         std::cout << "\nPlayer " << board.checkWin() << " has won the game!" << std::endl;
+        system("pause");
         return (int) board.checkWin();
     }
 }
