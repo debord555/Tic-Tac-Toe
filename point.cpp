@@ -1,13 +1,16 @@
-class Point {
+class Point
+{
     int x, y;
 
 public:
-    Point() {
+    Point()
+    {
         x = 0;
         y = 0;
     }
 
-    Point(int x, int y) {
+    Point(int x, int y)
+    {
         this->x = x;
         this->y = y;
     }
@@ -19,30 +22,37 @@ public:
     bool isValid();
 };
 
-int Point::getX() {
+int Point::getX()
+{
     return x;
 }
 
-int Point::getY() {
+int Point::getY()
+{
     return y;
 }
 
-int Point::setX(int x) {
+int Point::setX(int x)
+{
     this->x = x;
     return 0;
 }
 
-int Point::setY(int y) {
+int Point::setY(int y)
+{
     this->y = y;
     return 0;
 }
 
-bool Point::isValid() {
-    if (x < 4 && x > -1) {
+bool Point::isValid()
+{
+    if (x < 4 && x > -1)
+    {
         if (y < 4 && y > -1)
             return true;
         else
             return false;
-    } else
+    }
+    else
         return false;
 }
